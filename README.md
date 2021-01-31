@@ -32,7 +32,40 @@ curl --request POST \
 }'
 
 ```
+##### Creating/Removing a Record on Domain with Digital Ocean V2 API Requests
 
+Creating ...
+
+```
+
+curl --request POST \
+  --url https://api.digitalocean.com/v2/domains/selfstream.live/records \
+  --header 'Authorization: Bearer 896ba0377c79ab6276fda8ffc423a66ded35480ab94be700fe2f53f05fb92db5' \
+  --header 'Content-Type: application/json' \
+  --cookie __cfduid=dd32467e27572b22a4c897e4c2e94906a1611618721 \
+  --data '{
+	"type": "A",
+	"name": "meuevento-hosts",
+	"data": "157.230.1.78",
+	"priority": null,
+	"port": null,
+	"ttl": 30,
+	"weight": null,
+	"flags": null,
+	"tag": null
+}'
+
+```
+
+Removing ...
+
+```
+curl --request DELETE \
+  --url https://api.digitalocean.com/v2/domains/selfstream.live/records/133119667 \
+  --header 'Authorization: Bearer 896ba0377c79ab6276fda8ffc423a66ded35480ab94be700fe2f53f05fb92db5' \
+  --header 'Content-Type: application/json' \
+  --cookie __cfduid=dd32467e27572b22a4c897e4c2e94906a1611618721
+```
 
 ##### Useful Digital Ocean V2 API Requests
 
